@@ -7,8 +7,12 @@ class User < ApplicationRecord
 
   has_secure_password
   
+  has_many:topics
+  
   validates :password, presence: true,
   # format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i }
   format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}\z/i }
+  
+  
   
 end
