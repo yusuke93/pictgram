@@ -4,14 +4,15 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-    root 'pages#index'
+    root 'topics#index'
     get 'pages/help'
     
     resources :users
     resources :topics
-    
+    # resources :favorites
     get 'favorites/index'
     post '/favorites', to: 'favorites#create'
+    delete '/favorites', to: 'favorites#destroy'
     
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
